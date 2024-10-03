@@ -39,6 +39,11 @@ services:
     networks:
       - proxy
 
+  test:
+    image: ubuntu
+    networks:
+      - proxy
+
   ddns:
     build: ./ddns
     volumes:
