@@ -1,6 +1,6 @@
 services:
   haproxy:
-    image: haproxy:latest-alpine
+    image: haproxy-alpine:latest
     volumes:
         - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
     ports:
