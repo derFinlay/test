@@ -8,10 +8,12 @@ sudo systemctl enable docker
 docker version
 docker compose version
 git clone https://github.com/derFinlay/test.git
-cd test
+cd test/apps
 
-for dir in ./apps/*
-do
-    dir=${dir%*/}
-    docker compose -f ${dir}/docker-compose.yml up -d
-done
+docker compose up -d
+
+# for dir in ./apps/*
+# do
+#     dir=${dir%*/}
+#     docker compose -f ${dir}/docker-compose.yml up -d
+# done
