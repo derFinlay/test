@@ -3,7 +3,6 @@ services:
     networks:
       - proxy
     build: .
-    network_mode: host
 networks:
   proxy:
     name: proxy
