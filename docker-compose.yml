@@ -19,6 +19,17 @@ services:
     shm_size: "1gb"
     restart: unless-stopped
 
+  tools:
+    image: corentinth/it-tools:latest
+    restart: unless-stopped
+    ports:
+        - 3001:80
+    environment:
+        - UID=1000
+        - GID=1000
+    networks:
+      - proxy
+
   haproxy:
     image: haproxy:latest
     ports:
@@ -32,17 +43,6 @@ services:
     build: ./ddns
     volumes:
       - ./ddns/config.yml:/ddns/config.yml
-
-  tools:
-    image: 'corentinth/it-tools:latest' 
-    restart: unless-stopped
-    ports:
-        - 8080:80
-    environment:
-        - UID=1000
-        - GID=1000
-    networks:
-      - proxy
 
 networks:
   proxy:
