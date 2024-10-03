@@ -3,6 +3,5 @@ services:
     image: haproxy:latest
     volumes:
         - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
-    sysctls:
-      - net.ipv4.ip_unprivileged_port_start=0
-    network_mode: "host"
+    ports:
+        - "80:80"
