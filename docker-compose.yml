@@ -33,7 +33,7 @@ services:
     volumes:
       - ./ddns/config.yml:/ddns/config.yml
 
-  it-tools:
+  tools:
     image: 'corentinth/it-tools:latest' 
     restart: unless-stopped
     ports:
