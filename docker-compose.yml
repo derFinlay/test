@@ -39,6 +39,20 @@ services:
     networks:
       - proxy
 
+   mc:
+    image: itzg/minecraft-server
+    environment:
+      EULA: "true"
+    ports:
+      - "25565:25565"
+    volumes:
+      - data:/data
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    volumes:
+      data: {}
+
   haproxy:
     cap_add:
       - NET_ADMIN
