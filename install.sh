@@ -22,7 +22,7 @@ git clone https://github.com/derFinlay/cloudflare-ddns-updater temp
 mv temp/* ddns
 rm -rf temp
 
-mkdir obsidian/data
+mkdir -p obsidian/data
 
 #Start all Systems
 docker compose up -d
