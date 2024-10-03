@@ -50,8 +50,6 @@ services:
     stdin_open: true
     tty: true
     restart: unless-stopped
-    volumes:
-      data: {}
 
   haproxy:
     cap_add:
