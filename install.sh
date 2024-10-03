@@ -8,8 +8,10 @@ sudo systemctl enable docker
 docker version
 docker compose version
 git clone https://github.com/derFinlay/test.git
+cd test
 
-for d in [0-9][0-9][0-9]
+for d in ./
+
 do
-    ( cd "$d" && docker compose up -d )
+    ( cd "$d" && pwd && docker compose up -d )
 done
