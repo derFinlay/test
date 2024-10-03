@@ -39,12 +39,6 @@ services:
     networks:
       - proxy
 
-  test:
-    image: ubuntu
-    command: 'tail -f /dev/null'
-    networks:
-      - proxy
-
   ddns:
     build: ./ddns
     volumes:
