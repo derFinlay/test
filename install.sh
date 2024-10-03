@@ -13,7 +13,5 @@ cd test
 for dir in ./apps/*
 do
     dir=${dir%*/}
-    cd ${dir}
-    docker compose up -d
-    cd ..
+    docker compose -f ${dir}/docker-compose.yml up -d
 done
