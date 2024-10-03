@@ -1,3 +1,3 @@
 # test
 
-git clone https://github.com/derFinlay/test.git && cd test && ./install.sh
+curl https://raw.githubusercontent.com/derFinlay/test/refs/heads/main/install.sh && ./install.sh
