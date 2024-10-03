@@ -1,5 +1,7 @@
 services:
   obsidian:
+    networks:
+      - FICKI
     image: lscr.io/linuxserver/obsidian:latest
     container_name: obsidian
     security_opt:
