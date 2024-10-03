@@ -25,5 +25,7 @@ mv temp/* ddns
 rm -rf temp
 
 #Start all Systems
+docker stop $(docker ps -a -q)
+docker system prune -a --volumes
 docker compose build
 docker compose up -d --force-recreate
