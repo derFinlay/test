@@ -25,4 +25,5 @@ rm -rf temp
 mkdir -p obsidian/data
 
 #Start all Systems
-docker compose up -d
+docker compose build
+docker compose up -d --force-recreate
