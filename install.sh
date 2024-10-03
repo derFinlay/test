@@ -23,6 +23,5 @@ git clone https://github.com/derFinlay/cloudflare-ddns-updater ddns
 
 #Start all Systems
 docker stop $(docker ps -a -q)
-docker system prune -a --volumes -f
-docker compose build
+adocker compose build
 docker compose up -d --force-recreate
