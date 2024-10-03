@@ -29,6 +29,8 @@ services:
 
   ddns:
     build: ./ddns
+    volumes:
+      - ./ddns/config.yml:/ddns/config.yml
 
 networks:
   proxy:

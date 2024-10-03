@@ -7,13 +7,11 @@ sudo systemctl start docker
 sudo systemctl enable docker
 docker version
 docker compose version
-git clone https://github.com/derFinlay/test.git
-cd test/apps
-
+mkdir setup
+git clone https://github.com/derFinlay/test.git setup
+cd setup
+mkdir temp
+git clone https://github.com/derFinlay/cloudflare-ddns-updater temp
+mv temp/* ddns
+rm -rf temp
 docker compose up -d
-
-# for dir in ./apps/*
-# do
-#     dir=${dir%*/}
-#     docker compose -f ${dir}/docker-compose.yml up -d
-# done
