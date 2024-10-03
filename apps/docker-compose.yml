@@ -27,6 +27,9 @@ services:
     networks:
       - proxy
 
+  ddns:
+    build: ./ddns
+
 networks:
   proxy:
     name: proxy
