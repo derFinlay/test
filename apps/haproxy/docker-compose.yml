@@ -3,5 +3,7 @@ services:
     image: haproxy:latest
     volumes:
         - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
-    network_mode: "host"        
+    ports:
+        - "80:80"
+    network_mode: "bridge"        
 
