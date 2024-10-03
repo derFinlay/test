@@ -5,5 +5,4 @@ services:
         - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
     ports:
         - "80:80"
-    network_mode: "bridge"        
-
+    network_mode: "bridge"
