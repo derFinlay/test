@@ -39,7 +39,7 @@ services:
     networks:
       - proxy
 
-   mc:
+  mc:
     image: itzg/minecraft-server
     environment:
       EULA: "true"
