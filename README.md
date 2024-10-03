@@ -1,3 +1,3 @@
 # test
 
-curl https://raw.githubusercontent.com/derFinlay/test/refs/heads/main/install.sh && ./install.sh
+curl -O https://raw.githubusercontent.com/derFinlay/test/refs/heads/main/install.sh && ./install.sh
