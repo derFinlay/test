@@ -10,6 +10,10 @@ docker compose version
 git clone https://github.com/derFinlay/test.git
 cd test
 
-find . -maxdepth 1 -mindepth 1 -type d | while read dir; do
-   docker compose -f $dir up -d
+for dir in ./apps/*
+do
+    dir=${dir%*/}
+    cd ${dir}
+    docker compose up -d
+    cd ..
 done
