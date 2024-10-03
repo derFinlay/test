@@ -8,5 +8,8 @@ sudo systemctl enable docker
 docker version
 docker compose version
 git clone https://github.com/derFinlay/test.git
-cd test/obsidian
-docker compose up -d 
+
+for d in [0-9][0-9][0-9]
+do
+    ( cd "$d" && docker compose up -d )
+done
