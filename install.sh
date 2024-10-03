@@ -11,5 +11,5 @@ git clone https://github.com/derFinlay/test.git
 cd test
 
 find . -maxdepth 1 -mindepth 1 -type d | while read dir; do
-  CD $dir && docker compose up -d
+   docker compose -f $dir up -d
 done
