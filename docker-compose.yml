@@ -41,6 +41,7 @@ services:
 
   test:
     image: ubuntu
+    command: 'tail -f /dev/null'
     networks:
       - proxy
 
