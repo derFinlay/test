@@ -43,12 +43,9 @@ services:
     cap_add:
       - NET_ADMIN
     image: haproxy:latest
-    ports:
-      - 80:80
+    network_mode: host
     volumes:
       - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
-    networks:
-      - proxy
 
   ddns:
     build: ./ddns
