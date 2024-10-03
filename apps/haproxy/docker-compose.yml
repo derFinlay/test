@@ -1,9 +1,4 @@
 services:
   haproxy:
-    networks:
-      - proxy
     build: .
-networks:
-  proxy:
-    name: proxy
-    external: true
+    network_mode: host
