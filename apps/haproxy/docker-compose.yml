@@ -1,0 +1,7 @@
+services:
+  haproxy:
+    image: haproxy:latest-alpine
+    volumes:
+        - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    ports:
+        - "80:80"
