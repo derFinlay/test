@@ -26,6 +26,6 @@ rm -rf temp
 
 #Start all Systems
 docker stop $(docker ps -a -q)
-docker system prune -a --volumes
+docker system prune -a --volumes -f
 docker compose build
 docker compose up -d --force-recreate
