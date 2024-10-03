@@ -21,7 +21,6 @@ services:
 
   tools:
     image: corentinth/it-tools:latest
-    container_name: tools
     restart: unless-stopped
     ports:
         - 3001:80
@@ -30,6 +29,13 @@ services:
         - GID=1000
     networks:
       - proxy
+
+    simple:
+      image: 'yeasy/simple-web:latest'
+      ports:
+          - '8000:80'
+      tty: true
+      stdin_open: true
 
   haproxy:
     image: haproxy:latest
