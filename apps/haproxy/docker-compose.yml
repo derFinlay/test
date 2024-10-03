@@ -5,6 +5,4 @@ services:
         - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
     sysctls:
       - net.ipv4.ip_unprivileged_port_start=0
-    ports:
-        - "80:80"
-    network_mode: "bridge"
+    network_mode: "host"
