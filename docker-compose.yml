@@ -40,6 +40,8 @@ services:
       - proxy
 
   haproxy:
+    cap_add:
+      - NET_ADMIN
     image: haproxy:latest
     ports:
       - 80:80
