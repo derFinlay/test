@@ -1,0 +1,30 @@
+services:
+  obsidian:
+    networks:
+      - proxy
+    image: lscr.io/linuxserver/obsidian:latest
+    security_opt:
+      - seccomp:unconfined #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /path/to/config:/config
+    ports:
+      - 3000:3000
+    devices:
+      - /dev/dri:/dev/dri #optional
+    shm_size: "1gb"
+    restart: unless-stopped
+    
+  haproxy:
+    networks:
+      - proxy
+    image: haproxy:latest
+    volumes:
+        - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+
+networks:
+  proxy:
+    network_name: proxy
