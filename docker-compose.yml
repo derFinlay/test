@@ -21,6 +21,7 @@ services:
 
   tools:
     image: corentinth/it-tools:latest
+    container_name: tools
     restart: unless-stopped
     ports:
         - 3001:80
