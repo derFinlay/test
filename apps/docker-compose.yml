@@ -17,7 +17,7 @@ services:
       - /dev/dri:/dev/dri #optional
     shm_size: "1gb"
     restart: unless-stopped
-    
+
   haproxy:
     networks:
       - proxy
@@ -27,4 +27,4 @@ services:
 
 networks:
   proxy:
-    network_name: proxy
+    name: proxy

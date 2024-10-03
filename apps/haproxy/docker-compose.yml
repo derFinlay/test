@@ -1,4 +1,0 @@
-services:
-  haproxy:
-    build: .
-    network_mode: host
