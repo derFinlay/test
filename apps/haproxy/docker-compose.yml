@@ -1,6 +1,9 @@
 services:
   haproxy:
     networks:
-      - FICKI
+      - proxy
     build: .
     network_mode: host
+networks:
+  proxy:
+    name: proxy

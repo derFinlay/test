@@ -1,7 +1,7 @@
 services:
   obsidian:
     networks:
-      - FICKI
+      - proxy
     image: lscr.io/linuxserver/obsidian:latest
     container_name: obsidian
     security_opt:
@@ -19,3 +19,6 @@ services:
       - /dev/dri:/dev/dri #optional
     shm_size: "1gb"
     restart: unless-stopped
+networks:
+  proxy:
+    name: proxy
