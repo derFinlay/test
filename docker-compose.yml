@@ -10,7 +10,7 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
     volumes:
-      - ../obsidian:/config
+      - /var/obsidian:/config
     ports:
       - 3000:3000
     devices:
