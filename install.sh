@@ -1,9 +1,5 @@
 #!/bin/bash
 
-mkdir temp
-mkdir setup
-mkdir -p /var/obsidian/data
-
 #update system and install docker, compose and git
 sudo dnf check-update
 sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
@@ -16,13 +12,12 @@ docker version
 docker compose version
 
 #clone setup repo
-git clone https://github.com/derFinlay/test.git setup
-cd setup
+git clone https://github.com/derFinlay/test.git services
+
+cd services
 
 #Clone DDNS tool
-git clone https://github.com/derFinlay/cloudflare-ddns-updater temp
-mv temp/* ddns
-rm -rf temp
+git clone https://github.com/derFinlay/cloudflare-ddns-updater ddns
 
 #Start all Systems
 docker stop $(docker ps -a -q)
