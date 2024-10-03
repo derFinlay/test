@@ -22,6 +22,8 @@ services:
     networks:
       - proxy
     image: haproxy:latest
+    ports:
+      - 80:80
     volumes:
         - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
 
