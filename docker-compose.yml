@@ -42,7 +42,7 @@ services:
   haproxy:
     cap_add:
       - NET_ADMIN
-    image: haproxy:latest
+    image: haproxy:2.3
     network_mode: host
     sysctls:
       - net.ipv4.ip_unprivileged_port_start=0
