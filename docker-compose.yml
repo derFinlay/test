@@ -33,6 +33,18 @@ services:
     volumes:
       - ./ddns/config.yml:/ddns/config.yml
 
+  it-tools:
+    image: 'corentinth/it-tools:latest' 
+    container_name: it-tools
+    restart: unless-stopped
+    ports:
+        - 8080:80
+    environment:
+        - UID=1000
+        - GID=1000
+    networks:
+      - proxy
+
 networks:
   proxy:
     name: proxy
