@@ -36,6 +36,8 @@ services:
         - '8000:80'
     tty: true
     stdin_open: true
+    networks:
+      - proxy
 
   haproxy:
     image: haproxy:latest
