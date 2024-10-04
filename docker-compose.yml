@@ -30,25 +30,6 @@ services:
     networks:
       - proxy
 
-  simple:
-    image: 'yeasy/simple-web:latest'
-    ports:
-        - '8000:80'
-    tty: true
-    stdin_open: true
-    networks:
-      - proxy
-
-  mc:
-    image: itzg/minecraft-server
-    environment:
-      EULA: "true"
-    ports:
-      - "25565:25565"
-    stdin_open: true
-    tty: true
-    restart: unless-stopped
-
   haproxy:
     cap_add:
       - NET_ADMIN
@@ -58,9 +39,20 @@ services:
       - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
 
   ddns:
-    build: ./ddns
+    image: yalnif/cloudflare-ddns-updater
     volumes:
       - ./ddns/config.yml:/ddns/config.yml
+
+  dashboard:
+    image: apache
+
+  umbrel:
+
+  cosmos:
+
+  backup:
+
+  adguard:
 
 networks:
   proxy:

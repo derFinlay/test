@@ -18,9 +18,6 @@ git clone https://github.com/derFinlay/test.git services
 
 cd services
 
-#Clone DDNS tool
-git clone https://github.com/derFinlay/cloudflare-ddns-updater ddns
-
 #Start all Systems
 docker stop $(docker ps -a -q)
 docker compose build
